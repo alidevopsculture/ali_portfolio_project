@@ -6,7 +6,7 @@ import os
 app = Flask(__name__, static_url_path='/alimurtaza/static')
 
 def get_projects():
-    file_path = os.path.join('api','static', 'assets', 'projects.json')
+    file_path = os.path.join('static', 'assets', 'projects.json')
     with open(file_path, 'r') as file:
             projects = json.load(file)
     return projects['projects']
