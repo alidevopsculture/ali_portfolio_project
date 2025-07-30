@@ -1,23 +1,22 @@
 {% extends 'base.html' %}
 
 {% block headersection %}
-
 <section class="header-container">
-  <img class="profile-image" src="https://avatars.githubusercontent.com/u/82393213?v=4" alt="" />
-  <h1>Hey Visitor! I'm Muhammad Abdullah</h1>
+  <img class="profile-image" src="https://media.licdn.com/dms/image/v2/D5603AQEnsdPv_h0_Ng/profile-displayphoto-shrink_400_400/B56ZYwAga9HEAg-/0/1744562163343?e=1756339200&v=beta&t=RQKKiGQQ5S1dyDW9f0UIq5qH_NxrSNmLU1U0JC_YhlQ" alt="Ali Murtaza Profile Picture" />
+  <h1>Hey Visitor! I'm Ali Murtaza</h1>
 
   <div class="content-text">
-    <h2>Python Backend Developer</h2>
-    <p>
-      Expertise in Python, Django, FastAPI, Flask, RESTful APIs and DevOps
-    </p>
+    <h2>DevOps Engineer</h2>
+    <p>Expertise in Docker, Kubernetes, AWS, GitHub, Python Scripting</p>
   </div>
-  <a href="{{ url_for('contact_page') }}" class="btn btn-secondary">Connect With Me</a>
+  <a href="{{ url_for('contact_page') }}" class="btn btn-secondary">Hire Me</a>
 </section>
 {% endblock %}
 
 {% block body %}
-<section id="projects" class="project-container container">
+
+<!-- Skills Section -->
+<section id="skills" class="project-container container">
   <div class="division"></div>
 
   <div class="content-text">
@@ -25,126 +24,43 @@
     <div class="scroll-container">
       <table style="text-align: center;">
         <tr>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-              <h4>Python</h4>
+          {% for skill in [
+            {"name": "Python", "url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"},
+            {"name": "Flask", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Framework/flask.svg"},
+            {"name": "Django", "url": "https://cdn.worldvectorlogo.com/logos/django.svg"},
+            {"name": "FastAPI", "url": "https://repository-images.githubusercontent.com/260928305/92388600-8d1c-11ea-9993-a726466b5099"},
+            {"name": "MySQL", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/mysqlworkbench.svg"},
+            {"name": "PostgreSQL", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Database/postgresql.svg"},
+            {"name": "EKL", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Database/elasticsearch.svg"},
+            {"name": "AWS", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/aws.svg"},
+            {"name": "GCP", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/gcp.svg"},
+            {"name": "Heroku", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/BaaS/heroku.svg"},
+            {"name": "Nginx", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/BackendDevelopment/nginx.svg"},
+            {"name": "Docker", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/docker.svg"},
+            {"name": "Bash", "url": "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/bash.svg"},
+            {"name": "Git", "url": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg"},
+            {"name": "GitHub", "url": "https://cdn-icons-png.flaticon.com/512/25/25231.png"}
+          ] %}
+          <td style="padding: 20px;">
+            <div class="textcard" style="padding: 20px;">
+              <img src="{{ skill.url }}" alt="{{ skill.name }}" width="55" height="55">
+              <h4>{{ skill.name }}</h4>
             </div>
           </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img class="github-icon" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Framework/flask.svg"
-              alt="Flask" width="50" height="50">
-              <h4>Flask</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 15px;">
-              <img src="https://cdn.worldvectorlogo.com/logos/django.svg"
-              alt="Django" width="50" height="50">
-              <h4>Django</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://repository-images.githubusercontent.com/260928305/92388600-8d1c-11ea-9993-a726466b5099"
-              alt="FastAPI" width="100" height="100">
-              <h4>FastAPI</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/mysqlworkbench.svg"
-              alt="MySQL" width="55" height="55">
-              <h4>MySQL</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Database/postgresql.svg"
-              alt="PostgreSQL" width="55" height="55">
-              <h4>PostgreSQL</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Database/elasticsearch.svg"
-              alt="EKL" width="55" height="55">
-              <h4>EKL</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/aws.svg"
-              alt="AWS" width="55" height="55">
-              <h4>AWS</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/gcp.svg"
-              alt="GCP" width="55" height="55">
-              <h4>GCP</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/BaaS/heroku.svg"
-              alt="Heroku" width="55" height="55">
-              <h4>Heroku</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/BackendDevelopment/nginx.svg"
-              alt="Nginx" width="55" height="55">
-              <h4>Nginx</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/docker.svg"
-              alt="docker" width="55" height="55">
-              <h4>Docker</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img class="github-icon"  src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/bash.svg"
-              alt="bash" width="55" height="55">
-              <h4>Bash</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg"
-              alt="git" width="55" height="55">
-              <h4>Git</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img class="github-icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-              alt="GitHub" width="55" height="55">
-              <h4>GitHub</h4>
-            </div>
-          </td>
+          {% endfor %}
         </tr>
       </table>
-    </div>
-    <div class="arrow-container">
     </div>
   </div>
 </section>
 
-
-<!-- Projects -->
-<section id="projects" class="project-container container">
+<!-- Projects Section -->
+<section id="highlighted-projects" class="project-container container">
   <div class="division"></div>
 
   <div class="content-text">
-    <h2>Popular Project</h2>
-    <p>Check out some of my projects</p>
+    <h2>Popular Projects</h2>
+    <p>Check out some of my impactful builds</p>
   </div>
 
   <div class="container">
@@ -154,29 +70,26 @@
           <td>
             <div class="container">
               <h3>Sentimantle</h3>
-              <p style="text-align: justify;">Flask REST API for a sentiment analysis project having
-                complex database and queries. Authentication and authorization using JWT. Multiple features like Data addition via
-                File Upload, File Download, Database Views and Stored Procedures.
-                <br>
-                Like the project name says, Sentimantle, it creates a report of a certain aspect of a location and perform sentiment analysis on it's respective aspects</p>
+              <p style="text-align: justify;">
+                Flask REST API for sentiment analysis with JWT-based authentication, file upload/download, stored procedures, and DB views.
+                It analyzes sentiment on aspects of a location and generates analytical reports. Designed for production-grade usage.
+              </p>
             </div>
           </td>
           <td>
             <div class="container">
               <h3>EKL</h3>
-              <p style="text-align: justify;">Elastic Search implementation (Realtime fast searching)
-                in Webapp on large MySQL database using EKL stack. EKL stack is also used by Google
-                for searching. 
-                Elastic Search uses document type NoSQL database, to perform modern search and analytics engine which is based on Apache Lucene.
-                It uses it's own indexing and mappings. After indexing, elasticsearch will create several inverted indices tables, which makes it super fast for searching
-                <br>
-                Developed logstash data pipeline to ingests data from MySQL, transforms it, and then send it to my ES Index</p>
+              <p style="text-align: justify;">
+                High-performance search using ElasticSearch with Logstash pipeline on large MySQL datasets.
+                Developed a real-time analytics engine with efficient indexing and custom mappings. Integrated EKL (Elastic, Kibana, Logstash) for observability.
+              </p>
             </div>
           </td>
         </tr>
       </table>
     </div>
   </div>
-  <a href="{{url_for('projects_page')}}" class="btn btn-secondary">See More <i class="fas fa-arrow-right"></i></a>
+  <a href="{{ url_for('projects_page') }}" class="btn btn-secondary">See More <i class="fas fa-arrow-right"></i></a>
 </section>
+
 {% endblock %}

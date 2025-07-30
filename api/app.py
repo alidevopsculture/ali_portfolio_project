@@ -3,8 +3,7 @@ import json
 import os
 
 # create flask app
-app = Flask(__name__)
-
+app = Flask(__name__, static_url_path='/alimurtaza/static')
 
 def get_projects():
     file_path = os.path.join('api','static', 'assets', 'projects.json')
@@ -23,28 +22,31 @@ def err_404(message):
     return render_template('error.html', message='404 Page Not Found'), 404
 
 
-@app.route('/')
+@app.route('/alimurtaza/')
 def main_page():
-    return render_template('index.html', title='Muhammad Abdullah - Homepage')
+    return render_template('index.html', title='Ali Murtaza - Homepage')
 
 
-@app.route('/home')
+@app.route('/alimurtaza/home')
 def home():
     return render_template('base.html', title='Base')
 
-@app.route('/about')
+@app.route('/alimurtaza/about')
 def about_page():
     return render_template('about.html', title="About")
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/alimurtaza/contact', methods=['GET', 'POST'])
 def contact_page():
     return render_template('contact.html', title='Contact Page')
 
-
-@app.route('/projects')
+@app.route('/alimurtaza/projects')
 def projects_page():
     return render_template('projects.html', title="Projects", cards=get_projects())
 
-@app.route('/resume')
+@app.route('/alimurtaza/resume')
 def resume():
-    return send_file("static/assets/Muhammad Abdullah Web.pdf", as_attachment=True)
+    return send_file("static/assets/Ali_murtaza-Resume.pdf", as_attachment=True)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
