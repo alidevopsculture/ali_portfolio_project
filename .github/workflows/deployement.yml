@@ -40,7 +40,9 @@ jobs:
           script :
             sudo apt upgrade -y
             curl -fsSL https://get.docker.com -o get-docker.sh
+            sudo chmod +x get-docker.sh
             sudo sh get-docker.sh
+            
             sudo docker pull ${{secrets.DOCKER_USERNAME}}/docker-portfolio-image
             sudo docker stop docker-portfolio-image || true
             sudo docker rm -f docker-portfolio-image || true
